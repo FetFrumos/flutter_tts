@@ -383,6 +383,11 @@ public class FlutterTtsPlugin implements MethodCallHandler, FlutterPlugin {
         this.queueMode = Integer.parseInt(queueMode);
         result.success(1);
         break;
+      case "getDefaultVoice":
+        Voice defaultVoice = tts.getDefaultVoice();
+        String name = defaultVoice.getName();
+        result.success(name);
+        break;
       default:
         result.notImplemented();
         break;
